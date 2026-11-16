@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: white;
+
+  /* dark layer on top of the image keeps the white text readable */
+  background-color: #0b2e26;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+    url("img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin: 0;
+  font-size: 96px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums; /* digits keep the same width */
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+.heading{
+    font-size: 38px;
+}
+#tap {
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  border: 6px solid #e0b650;
+  background: radial-gradient(circle at 35% 30%, #ffffff, #dfeee9);
+  color: #1f6f5c;
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  user-select: none;
+  touch-action: manipulation; /* stops double-tap zoom on phones */
+  -webkit-tap-highlight-color: transparent;
+}
+
+#tap:hover {
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
+}
+
+#tap:active {
+  transform: scale(0.95);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+#tap:focus-visible,
+#reset:focus-visible,
+#undo:focus-visible {
+  outline: 3px solid #e0b650;
+  outline-offset: 4px;
+}
+
+#reset,#undo {
+  padding: 10px 32px;
+  font-size: 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+  touch-action: manipulation;
+}
+
+#reset:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#reset:active {
+  background: rgba(255, 255, 255, 0.35);
+}
+#undo:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#undo:active {
+  background: rgba(255, 255, 255, 0.35);
+}
